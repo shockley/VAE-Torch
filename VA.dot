@@ -1,0 +1,65 @@
+digraph G {
+	graph [bb="0,0,1031,1362"];
+	node [label="\N",
+		shape=oval
+	];
+	n1	 [height=3.1034,
+		label="Node1\ninput = {torch.CudaTensor[1x20]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> (4) -> output]\l  (1): nn.Linear(\
+20 -> 400)\l  (2): nn.ReLU\l  (3): nn.Linear(400 -> 784)\l  (4): nn.Sigmoid\l}\lreverseMap = {}",
+		pos="515,244",
+		tooltip="[main.lua]:61_",
+		width=5.0951];
+	n2	 [height=1.3356,
+		label="Node2\ninput = {torch.CudaTensor[1x784],torch.CudaTensor[1x20],torch.CudaTensor[1x20]}\lmapindex = {Node1,Node3,Node4}\lreverseMap = {}",
+		pos="515,48",
+		tooltip="[[C]]:-1_",
+		width=9.5843];
+	n1 -> n2	 [pos="e,515,96.25 515,132.12 515,123.29 515,114.61 515,106.39"];
+	n3	 [height=1.3356,
+		label="Node3\ninput = {{torch.CudaTensor[1x20],torch.CudaTensor[1x20]}}\lselectindex = 1\lreverseMap = {}",
+		pos="253,594",
+		tooltip="[main.lua]:52_-1",
+		width=7.0298];
+	n3 -> n2	 [pos="e,371.51,91.963 245.47,545.86 233.71,454.68 221.72,252.54 322,132 333.42,118.28 347.52,106.77 362.87,97.129"];
+	n5	 [height=1.6303,
+		label="Node5\ninput = {torch.CudaTensor[1x20],torch.CudaTensor[1x20]}\lmodule = nn.Sampler\lreverseMap = {}\lmapindex = {Node3,Node4}",
+		pos="515,451",
+		tooltip="[main.lua]:53_",
+		width=6.7534];
+	n3 -> n5	 [pos="e,416.6,504.95 335.9,548.39 358.63,536.15 383.61,522.71 407.5,509.85"];
+	n4	 [height=1.3356,
+		label="Node4\ninput = {{torch.CudaTensor[1x20],torch.CudaTensor[1x20]}}\lselectindex = 2\lreverseMap = {}",
+		pos="777,594",
+		tooltip="[main.lua]:52_-2",
+		width=7.0298];
+	n4 -> n2	 [pos="e,657.22,91.839 784.41,545.85 795.93,454.66 807.41,252.49 707,132 695.52,118.23 681.34,106.69 665.91,97.018"];
+	n4 -> n5	 [pos="e,613.4,504.95 694.1,548.39 671.37,536.15 646.39,522.71 622.5,509.85"];
+	n5 -> n1	 [pos="e,515,355.99 515,392.08 515,383.82 515,375.08 515,366.15"];
+	n6	 [height=1.3356,
+		label="Node6\ninput = {{torch.CudaTensor[1x20],torch.CudaTensor[1x20]}}\lreverseMap = {}\lnSplitOutputs = 2",
+		pos="515,726",
+		tooltip="[main.lua]:52_ split at [main.lua]:52-mnode",
+		width=7.0298];
+	n6 -> n3	 [pos="e,341.82,639.07 425.93,680.81 401.75,668.81 375.45,655.76 350.81,643.53"];
+	n6 -> n4	 [pos="e,688.18,639.07 604.07,680.81 628.25,668.81 654.55,655.76 679.19,643.53"];
+	n7	 [height=4.2819,
+		label="Node7\ninput = {torch.CudaTensor[1x784]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): nn.Linear(784 \
+-> 400)\l  (2): nn.ReLU\l  (3): nn.ConcatTable {\l    input\l      |`-> (1): nn.Linear(400 -> 20)\l      |`-> (2): nn.Linear(400 \
+-> 20)\l       ... -> output\l  }\l}\lreverseMap = {}",
+		pos="515,964",
+		tooltip="[main.lua]:52_",
+		width=4.3943];
+	n7 -> n6	 [pos="e,515,774.43 515,809.54 515,800.85 515,792.44 515,784.53"];
+	n8	 [height=1.3356,
+		label="Node8\ninput = {torch.CudaTensor[1x784]}\lmodule = nn.Identity\lreverseMap = {}",
+		pos="515,1202",
+		tooltip="[main.lua]:51_",
+		width=4.1989];
+	n8 -> n7	 [pos="e,515,1118.4 515,1153.8 515,1146 515,1137.5 515,1128.6"];
+	n9	 [height=1.041,
+		label="Node9\ninput = {torch.CudaTensor[1x784]}\lreverseMap = {}",
+		pos="515,1324",
+		tooltip="[[C]]:-1_",
+		width=4.1989];
+	n9 -> n8	 [pos="e,515,1250.5 515,1286.3 515,1278.2 515,1269.4 515,1260.7"];
+}
